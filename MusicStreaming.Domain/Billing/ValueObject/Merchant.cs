@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MusicStreaming.Domain.Billing.ValueObject
 {
-    internal class Merchant
+    public class Merchant
     {
+        public string Nome {  get; set; }
     }
 }

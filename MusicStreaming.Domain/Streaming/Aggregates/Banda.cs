@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MusicStreaming.Domain.Streaming.Aggregates
 {
-    internal class Banda
+    public class Banda
     {
+        public Guid Id { get; set; }
+        public String Nome { get; set; }
+        public String Descricao { get; set; }
     }
 }

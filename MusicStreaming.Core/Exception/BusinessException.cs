@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace MusicStreaming.Core.Exception
 {
-    internal class BusinessException
+    public class BusinessException : System.Exception
     {
+        public List<BusinessValidation> Errors { get; set; } = new List<BusinessValidation>();
+
+        public void AddError(BusinessValidation validation)
+        {
+            this.Errors.Add(validation);
+        }
+
+        public void ValidateAndThrow()
+        {
+            if (this.Errors.Any())
+                throw this;
+        }
+    }
+
+
+    public class BusinessValidation
+    {
+        public string ErrorName { get; set; } = "Erros de Validação";
+        public string ErrorMessage { get; set; }
     }
 }
+
+

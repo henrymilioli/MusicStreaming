@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.Domain", "MusicStreaming.Domain\MusicStreaming.Domain.csproj", "{74BFEB28-AB58-41A2-A333-90C6AFEAA893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStreaming.Domain", "MusicStreaming.Domain\MusicStreaming.Domain.csproj", "{74BFEB28-AB58-41A2-A333-90C6AFEAA893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.Core", "MusicStreaming.Core\MusicStreaming.Core.csproj", "{290F573A-2E04-40D5-BCF4-5C2271E2E690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStreaming.Core", "MusicStreaming.Core\MusicStreaming.Core.csproj", "{290F573A-2E04-40D5-BCF4-5C2271E2E690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.Tests", "MusicStreaming.Tests\MusicStreaming.Tests.csproj", "{C6398AD2-3DD1-4C6A-AE9B-FBD94762C4D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStreaming.Tests", "MusicStreaming.Tests\MusicStreaming.Tests.csproj", "{C6398AD2-3DD1-4C6A-AE9B-FBD94762C4D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.Application", "MusicStreaming.Application\MusicStreaming.Application.csproj", "{5FAC7114-9A46-4B7A-A9E3-498E57821FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStreaming.Application", "MusicStreaming.Application\MusicStreaming.Application.csproj", "{5FAC7114-9A46-4B7A-A9E3-498E57821FF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{290F573A-2E04-40D5-BCF4-5C2271E2E690} = {290F573A-2E04-40D5-BCF4-5C2271E2E690}
+		{74BFEB28-AB58-41A2-A333-90C6AFEAA893} = {74BFEB28-AB58-41A2-A333-90C6AFEAA893}
+		{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B} = {ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}
+		{C6398AD2-3DD1-4C6A-AE9B-FBD94762C4D9} = {C6398AD2-3DD1-4C6A-AE9B-FBD94762C4D9}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.Repository", "MusicStreaming.Repository\MusicStreaming.Repository.csproj", "{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStreaming.Repository", "MusicStreaming.Repository\MusicStreaming.Repository.csproj", "{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStreaming.API", "MusicStreaming.API\MusicStreaming.API.csproj", "{F83D026B-BD3B-4828-85A7-685E71666DEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,10 @@ Global
 		{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADC9C21A-D211-4C8E-8D34-ED7C4A4CF55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83D026B-BD3B-4828-85A7-685E71666DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83D026B-BD3B-4828-85A7-685E71666DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83D026B-BD3B-4828-85A7-685E71666DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83D026B-BD3B-4828-85A7-685E71666DEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <Folder Include="Transacao\" />
-    <Folder Include="Streaming\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicStreaming.Core\MusicStreaming.Core.csproj" />
+    <ProjectReference Include="..\MusicStreaming.Domain\MusicStreaming.Domain.csproj" />
+    <ProjectReference Include="..\MusicStreaming.Repository\MusicStreaming.Repository.csproj" />
   </ItemGroup>
 
 </Project>

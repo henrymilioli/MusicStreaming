@@ -67,7 +67,7 @@ namespace MusicStreaming.Tests.Domain.Account
                 Numero = "6465465466",
             };
 
-            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Agreggates.Transacao()
+            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Aggregates.Transacao()
             {
                 DtTransacao = DateTime.Now,
                 Id = Guid.NewGuid(),
@@ -94,7 +94,7 @@ namespace MusicStreaming.Tests.Domain.Account
                 Numero = "6465465466",
             };
 
-            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Agreggates.Transacao()
+            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Aggregates.Transacao()
             {
                 DtTransacao = DateTime.Now.AddMinutes(-1),
                 Id = Guid.NewGuid(),
@@ -106,7 +106,7 @@ namespace MusicStreaming.Tests.Domain.Account
                 Descricao = "saljasdlak"
             });
 
-            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Agreggates.Transacao()
+            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Aggregates.Transacao()
             {
                 DtTransacao = DateTime.Now.AddMinutes(-0.5),
                 Id = Guid.NewGuid(),
@@ -118,7 +118,7 @@ namespace MusicStreaming.Tests.Domain.Account
                 Descricao = "saljasdlak"
             });
 
-            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Agreggates.Transacao()
+            cartao.Transacoes.Add(new MusicStreaming.Domain.Billing.Aggregates.Transacao()
             {
                 DtTransacao = DateTime.Now,
                 Id = Guid.NewGuid(),

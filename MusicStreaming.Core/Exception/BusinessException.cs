@@ -10,6 +10,13 @@ namespace MusicStreaming.Core.Exception
     {
         public List<BusinessValidation> Errors { get; set; } = new List<BusinessValidation>();
 
+        public BusinessException() { }
+
+        public BusinessException(BusinessValidation validation)
+        {
+            this.AddError(validation);
+        }
+
         public void AddError(BusinessValidation validation)
         {
             this.Errors.Add(validation);
@@ -29,5 +36,3 @@ namespace MusicStreaming.Core.Exception
         public string ErrorMessage { get; set; }
     }
 }
-
-

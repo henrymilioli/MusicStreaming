@@ -15,7 +15,7 @@ namespace MusicStreaming.Application.Conta
     public class UsuarioService
     {
         private PlanoRepository planoRepository = new PlanoRepository();
-        private UsuarioRepository usarioRepository = new UsuarioRepository();
+        private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
 
         public CriarUsuarioDTO CriarConta(CriarUsuarioDTO conta)
@@ -43,11 +43,34 @@ namespace MusicStreaming.Application.Conta
             usuario.Criar(conta.Nome, conta.CPF, plano, cartao);
 
             //Gravar o usuario na base;
-            this.usarioRepository.SalvarUsuario(usuario);
+            this.usuarioRepository.SalvarUsuario(usuario);
             conta.Id = usuario.Id;
 
             // Retornar Conta Criada
             return conta;
+        }
+
+        public CriarUsuarioDTO ObterUsuario(Guid id)
+        {
+            var usuario = this.usuarioRepository.ObterUsuario(id);
+
+            if (usuario == null)
+                return null;
+
+            CriarUsuarioDTO result = new CriarUsuarioDTO()
+            {
+                Id = usuario.Id,
+                Cartao = new CartaoDto()
+                {
+                    Ativo = usuario.Cartoes.FirstOrDefault().Ativo,
+                    Limite = usuario.Cartoes.FirstOrDefault().Limite,
+                    Numero = "xxxx-xxxx-xxxx-xx"
+                },
+                CPF = usuario.CPF.NumeroFormatado(),
+                Nome = usuario.Nome,
+            };
+
+            return result;
         }
 
 

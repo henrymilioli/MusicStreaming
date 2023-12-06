@@ -1,4 +1,5 @@
 ﻿using System;
+using MusicStreaming.Application.Streaming.Dto;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,4 +28,17 @@ namespace MusicStreaming.Application.Conta.Dto
 
         public Boolean Ativo { get; set; }
     }
+
+    public class PlaylistDto
+    {
+        public Guid Id { get; set; }
+
+        public String Nome { get; set; }
+        public Boolean Publica { get; set; }
+
+        public List<MusicaDto> Musicas { get; set; }
+    }
+    
+        
 }
+

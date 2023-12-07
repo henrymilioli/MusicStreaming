@@ -1,7 +1,7 @@
 ﻿using MusicStreaming.Application.Streaming.Dto;
 using MusicStreaming.Domain.Streaming.Aggregates;
 using MusicStreaming.Domain.Streaming.ValueObject;
-using MusicStreaming.Repository.Streaming;
+using MusicStreaming.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

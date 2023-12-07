@@ -1,4 +1,4 @@
-﻿using MusicStreaming.Domain.Streaming.Aggregates;
+﻿using MusicStreaming.Domain.Account.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.Linq;

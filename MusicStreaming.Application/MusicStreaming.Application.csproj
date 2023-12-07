@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Transacao\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MusicStreaming.Core\MusicStreaming.Core.csproj" />
     <ProjectReference Include="..\MusicStreaming.Domain\MusicStreaming.Domain.csproj" />
     <ProjectReference Include="..\MusicStreaming.Repository\MusicStreaming.Repository.csproj" />

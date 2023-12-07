@@ -1,6 +1,5 @@
-﻿using MusicStreaming.Domain.Account.Aggregates;
+﻿using MusicStreaming.Domain.Account.Aggregates; 
 using MusicStreaming.Domain.Account.ValueObject;
-using MusicStreaming.Domain.Streaming.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +15,12 @@ namespace MusicStreaming.Domain.Account.Aggregates
         public CPF CPF { get; set; }
         public List<Cartao> Cartoes { get; set; }
         public List<Playlist> Playlists { get; set; }
-        public List<Banda> BandasFavoritas { get; set; }
         public List<Assinatura> Assinaturas { get; set; }
 
 
         public Usuario()
         {
             this.Playlists = new List<Playlist>();
-            this.BandasFavoritas = new List<Banda>();
             this.Assinaturas = new List<Assinatura>();
             this.Cartoes = new List<Cartao>();
         }
@@ -82,8 +79,15 @@ namespace MusicStreaming.Domain.Account.Aggregates
                 Usuario = this
             });
         }
+
+        public void Favoritar(Musica musica)
+        {
+            this.Playlists.FirstOrDefault(x => x.Nome == "Favoritas")
+                          .Musicas.Add(musica);
+        }
     }
 }
+
 
 
 

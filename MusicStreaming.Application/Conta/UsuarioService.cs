@@ -2,28 +2,28 @@
 using MusicStreaming.Application.Conta;
 using MusicStreaming.Core.Exception;
 using MusicStreaming.Domain.Account.Aggregates;
-using MusicStreaming.Domain.Streaming.Aggregates;
-using MusicStreaming.Repository.Streaming;
 using MusicStreaming.Repository.Conta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MusicStreaming.Repository;
 using MusicStreaming.Application.Streaming;
+
 
 namespace MusicStreaming.Application.Conta
 {
     public class UsuarioService
     {
-        private PlanoRepository planoRepository = new PlanoRepository();
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
-        private BandaService bandaService = new BandaService();
+        private PlanoRepository planoRepository = new PlanoRepository();
+        private BandaRepository bandaRepository = new BandaRepository();
 
-        public CriarUsuarioDTO CriarConta(CriarUsuarioDTO conta)
+        public async Task<CriarUsuarioDTO> CriarConta(CriarUsuarioDTO conta)
         {
             //Todo: Verificar pegar plano
-            Plano plano = this.planoRepository.ObterPlanoPorId(conta.PlanoId);
+            Plano plano = await this.planoRepository.ObterPlano(conta.PlanoId);
 
             if (plano == null)
             {
@@ -80,14 +80,14 @@ namespace MusicStreaming.Application.Conta
                     Id = item.Id,
                     Nome = item.Nome,
                     Publica = item.Publica,
-                    Musicas = new List<Streaming.Dto.MusicaDto>()
+                    Musicas = new List<Conta.Dto.MusicaDto>()
                 };
 
                 foreach (var musicas in item.Musicas)
                 {
-                    playList.Musicas.Add(new Streaming.Dto.MusicaDto()
+                    playList.Musicas.Add(new Conta.Dto.MusicaDto()
                     {
-                        Duracao = musicas.Duracao.Valor,
+                        Duracao = musicas.Duracao,
                         Id = musicas.Id,
                         Nome = musicas.Nome
                     });
@@ -99,7 +99,7 @@ namespace MusicStreaming.Application.Conta
             return result;
         }
 
-        public void FavoritarMusica(Guid id, Guid idMusica)
+        public async Task FavoritarMusica(Guid id, Guid idMusica)
         {
             var usuario = this.usuarioRepository.ObterUsuario(id);
 
@@ -112,7 +112,7 @@ namespace MusicStreaming.Application.Conta
                 });
             }
 
-            var musica = this.bandaService.ObterMusica(idMusica);
+            var musica = await this.bandaRepository.ObterMusica(idMusica);
 
             if (musica == null)
             {
@@ -127,7 +127,5 @@ namespace MusicStreaming.Application.Conta
             this.usuarioRepository.Update(usuario);
 
         }
-
-
     }
 }

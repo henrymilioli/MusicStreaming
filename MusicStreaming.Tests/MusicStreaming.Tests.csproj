@@ -23,7 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MusicStreaming.Core\MusicStreaming.Core.csproj" />
     <ProjectReference Include="..\MusicStreaming.Domain\MusicStreaming.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
 
 </Project>

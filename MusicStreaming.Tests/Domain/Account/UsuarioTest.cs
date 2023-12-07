@@ -1,6 +1,5 @@
 ﻿using MusicStreaming.Domain.Account.Aggregates;
 using MusicStreaming.Domain.Account.Exception;
-using MusicStreaming.Domain.Streaming.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.Linq;

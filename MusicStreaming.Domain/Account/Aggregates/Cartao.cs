@@ -10,9 +10,10 @@ namespace MusicStreaming.Domain.Account.Aggregates
 {
     public class Cartao
     {
+
         private const int TRANSACTION_TIME_INTERVAL = -2;
         private const int TRANSACTION_MERCHANT_REPEAT = 1;
-
+       
 
         public Guid Id { get; set; }
         public Boolean Ativo { get; set; }
@@ -33,14 +34,14 @@ namespace MusicStreaming.Domain.Account.Aggregates
             this.IsCartaoAtivo(validationErrors);
 
             Billing.Aggregates.Transacao transacao = new Billing.Aggregates.Transacao();
-            transacao.Merchant = new Billing.ValueObject.Merchant() { Nome = merchant };
-            transacao.Valor = valor;
-            transacao.Descricao = descricao;
+            transacao.Merchant = new Billing.ValueObject.Merchant() {  Nome = merchant } ;
+            transacao.Valor = valor ;
+            transacao.Descricao = descricao ;
             transacao.DtTransacao = DateTime.Now;
 
             //Verificar o Limite
             this.VerificaLimiteDisponivel(transacao, validationErrors);
-
+            
             //Validar a transação
             this.ValidarTransacao(transacao, validationErrors);
 
@@ -56,7 +57,7 @@ namespace MusicStreaming.Domain.Account.Aggregates
             //Adicionar uma nova transação
             this.Transacoes.Add(transacao);
 
-
+            
         }
 
         private void IsCartaoAtivo(CartaoException validationErrors)
@@ -77,11 +78,8 @@ namespace MusicStreaming.Domain.Account.Aggregates
         {
             if (transacao.Valor > this.Limite)
             {
-                validationErrors.AddError(new Core.Exception.BusinessValidation()
-                {
-                    ErrorMessage = "Cartão não possui limite para esta transação",
-                    ErrorName = nameof(CartaoException)
-                });
+                validationErrors.AddError(new Core.Exception.BusinessValidation() { ErrorMessage = "Cartão não possui limite para esta transação",
+                                                                                    ErrorName = nameof(CartaoException) });
             }
         }
 
@@ -98,8 +96,8 @@ namespace MusicStreaming.Domain.Account.Aggregates
                 });
             }
 
-            if (ultimasTransacoes?.Where(x => x.Merchant.Nome.ToUpper() == transacao.Merchant.Nome.ToUpper()
-                                         && x.Valor == transacao.Valor).Count() == TRANSACTION_MERCHANT_REPEAT)
+            if (ultimasTransacoes?.Where(x => x.Merchant.Nome.ToUpper() == transacao.Merchant.Nome.ToUpper() 
+                                         &&   x.Valor == transacao.Valor).Count() == TRANSACTION_MERCHANT_REPEAT)
             {
                 validationErrors.AddError(new Core.Exception.BusinessValidation()
                 {
@@ -108,6 +106,5 @@ namespace MusicStreaming.Domain.Account.Aggregates
                 });
             }
         }
-
     }
 }

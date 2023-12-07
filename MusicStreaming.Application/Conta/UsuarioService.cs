@@ -1,4 +1,5 @@
 ﻿using MusicStreaming.Application.Conta.Dto;
+using MusicStreaming.Application.Conta;
 using MusicStreaming.Core.Exception;
 using MusicStreaming.Domain.Account.Aggregates;
 using MusicStreaming.Domain.Streaming.Aggregates;

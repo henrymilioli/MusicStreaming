@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MusicStreaming.Application.Conta;
 using MusicStreaming.Application.Conta.Dto;
+using MusicStreaming.Application.Conta.Dto;
 
 namespace SpotifyLike.API.Controllers
 {

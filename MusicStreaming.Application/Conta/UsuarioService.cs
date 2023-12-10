@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MusicStreaming.Repository;
-using MusicStreaming.Application.Streaming;
 
 
 namespace MusicStreaming.Application.Conta

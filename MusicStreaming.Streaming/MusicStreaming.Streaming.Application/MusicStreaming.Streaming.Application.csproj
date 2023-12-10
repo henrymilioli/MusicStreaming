@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicStreaming.Streaming.Core\MusicStreaming.Core.csproj" />
+    <ProjectReference Include="..\MusicStreaming.Streaming.Domain\MusicStreaming.Streaming.Domain.csproj" />
+    <ProjectReference Include="..\MusicStreaming.Streaming.Repository\MusicStreaming.Streaming.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

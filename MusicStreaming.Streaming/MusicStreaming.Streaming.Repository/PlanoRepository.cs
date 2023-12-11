@@ -19,8 +19,8 @@ namespace MusicStreaming.Streaming.Repository
                 PlanoRepository.plano.Add(new Plano()
                 {
                     Descricao = "Plano Basico",
-                    Nome = "Plano Basico Musica",
-                    Valor = 20M,
+                    Nome = "Plano Low Quality",
+                    Valor = 10,
                     Id = new Guid("8D044595-D4A6-4E1A-9F09-DAB92205C71C")
                 });
             }

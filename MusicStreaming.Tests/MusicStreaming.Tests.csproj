@@ -25,10 +25,11 @@
   <ItemGroup>
     <ProjectReference Include="..\MusicStreaming.Core\MusicStreaming.Core.csproj" />
     <ProjectReference Include="..\MusicStreaming.Domain\MusicStreaming.Domain.csproj" />
+	<ProjectReference Include="..\MusicStreaming.Application\MusicStreaming.Application.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Conta\" />
     <Folder Include="Controller\" />
   </ItemGroup>
 
